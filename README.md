@@ -31,3 +31,53 @@ npm install
 
 ▎ Note: The original files in C:\Users\HP\SurDix remain untouched. The archive is a clean, upload‑ready copy suitable for GitHub.
 ▎ If you prefer the ultra‑small tar.gz format (222 KB), it is also available at C:\Users\HP\Downloads\SurDix_small.tar.gz and can be extracted with tar -xzf SurDix_small.tar.gz.
+
+❯ give me the whole steps to run this project on another pc by decmpressing it
+
+  Thought for 10s
+
+Below is a complete, copy‑and‑paste ready guide for getting the SurDix project running on any other machine (Windows, macOS, or Linux) after you have unpacked the SurDix_final.zip (or the SurDix_small.tar.gz) you received.
+
+---
+
+1️⃣  Extract the archive
+
+┌──────────────────────────┬─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┐
+│            OS            │                                                       Command                                                       │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ Windows (PowerShell)     │ powershell<br>Expand-Archive -Path "C:\Path\To\SurDix_final.zip" -DestinationPath "C:\Path\To\SurDix" -Force<br>    │
+├──────────────────────────┼─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┤
+│ macOS / Linux (Terminal) │ bash<br>unzip -q SurDix_final.zip -d SurDix   # or for the .tar.gz:<br># tar -xzf SurDix_small.tar.gz -C SurDix<br> │
+└──────────────────────────┴─────────────────────────────────────────────────────────────────────────────────────────────────────────────────────┘
+
+▎ Result: You now have a folder SurDix that contains the full source tree (src/, public/, dist/, config files, etc.).
+
+---
+
+2️⃣  Open a terminal in the project root
+
+cd /path/to/SurDix   # replace with the actual path you chose
+
+---
+
+3️⃣  Install Node.js (if not already present)
+
+SurDix requires Node ≥ 18 (the project was built with Node 20.
+Download from https://nodejs.org/ and install the LTS version, then verify:
+
+node --version   # should print v20.x or higher
+npm --version    # should print 9.x or higher
+
+---
+
+4️⃣  Install project dependencies
+
+npm install
+
+This reads package-lock.json and installs exactly the same ver project was built.
+
+---
+
+5️⃣  (Optional) Set up environment variables for real backend
+
+The current code ships with mock authentication and deployment
